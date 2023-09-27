@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_app/pages/home.dart';
 
-void main() {
+void main() async {
+  //Precisamos da função asyncrona para carregar o Hive
+
+  //Inicializar o Hive
+  await Hive.initFlutter();
+
+  //Abrindo a box do Hive
+  // ignore: unused_local_variable
+  var box = await Hive.openBox('toDobox');
+
   runApp(const MainApp());
 }
 
@@ -12,7 +22,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: HomePage(), //Define nossa página principal
       theme: ThemeData(
           primarySwatch: Colors.pink,
           textTheme: Typography.blackHelsinki,

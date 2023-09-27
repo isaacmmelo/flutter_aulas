@@ -47,12 +47,14 @@ class ToDoList extends StatelessWidget {
               ),
 
               //Task Name
-              Text(
-                taskName,
-                style: TextStyle(
-                  decoration: taskCompleted
-                      ? TextDecoration.lineThrough
-                      : TextDecoration.none,
+              Flexible(
+                child: Text(
+                  taskName,
+                  style: TextStyle(
+                    decoration: taskCompleted
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                  ),
                 ),
               ),
             ],
