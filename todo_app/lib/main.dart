@@ -12,12 +12,13 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: HomePage(),
       theme: ThemeData(
           primarySwatch: Colors.pink,
           textTheme: Typography.blackHelsinki,
-          textSelectionTheme:
-              const TextSelectionThemeData(cursorColor: Colors.black),
+          textSelectionTheme: const TextSelectionThemeData(
+            cursorColor: Colors.black,
+          ),
           inputDecorationTheme: const InputDecorationTheme(
               enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.black)),
