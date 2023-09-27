@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ToDoList extends StatelessWidget {
   final String taskName;
   final bool taskCompleted;
@@ -15,9 +16,9 @@ class ToDoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Colors.pink,
           borderRadius: BorderRadius.circular(5),
@@ -25,10 +26,21 @@ class ToDoList extends StatelessWidget {
         child: Row(
           children: [
             //CheckBox
-            Checkbox(value: taskCompleted, onChanged: onChanged),
+            Checkbox(
+              value: taskCompleted,
+              onChanged: onChanged,
+              activeColor: Colors.black,
+            ),
 
             //Task Name
-            Text(taskName),
+            Text(
+              taskName,
+              style: TextStyle(
+                decoration: taskCompleted
+                    ? TextDecoration.lineThrough
+                    : TextDecoration.none,
+              ),
+            ),
           ],
         ),
       ),

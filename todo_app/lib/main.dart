@@ -14,7 +14,15 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
       theme: ThemeData(
-          primarySwatch: Colors.pink, textTheme: Typography.whiteMountainView),
+          primarySwatch: Colors.pink,
+          textTheme: Typography.blackHelsinki,
+          textSelectionTheme:
+              const TextSelectionThemeData(cursorColor: Colors.black),
+          inputDecorationTheme: const InputDecorationTheme(
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black)),
+              focusedBorder: OutlineInputBorder(),
+              hintStyle: TextStyle(color: Colors.black))),
     );
   }
 }
