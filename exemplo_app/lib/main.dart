@@ -19,11 +19,6 @@ void main() {
 class MainApp extends StatelessWidget {
   MainApp({super.key});
 
-  TextEditingController meuController = TextEditingController();
-  void entradaDados() {
-    print(meuController.text);
-  }
-
   /* ----- 
     Para a primeira função, criamos um StatelessWidget, que será a base do nosso aplicativo
   ----- */
@@ -48,43 +43,18 @@ class MainApp extends StatelessWidget {
           body, appBar, navBar, bottomNavigationBar, Colum, Widget dentre outrast
       ----- */
       home: Scaffold(
-          /* -----
+        /* -----
           Podemos colocar uma cor de background para a nossa estrutura, essa cor será a base de todo o aplicativo carregado nesta página
         ----- */
-          backgroundColor: Colors.black,
-          /* ----------------------------------------------------------------------
+        backgroundColor: Colors.black,
+        /* ----------------------------------------------------------------------
               !! TODOS OS CÓDIGOS ABAIXO, SERÃO IMPLEMENTADOS NESTE ESPAÇO !! 
         ---------------------------------------------------------------------- */
-          body: Center(
-            child: Container(
-              height: 350,
-              width: 400,
-              decoration: BoxDecoration(
-                //Podemos utilizar a tag decoration para mudarmos a aparência do container
-                color: Colors.deepPurple,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(children: [
-                  TextField(
-                    controller: meuController,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "Digite qualquer coisa",
-                        filled: true,
-                        fillColor: Colors.white),
-                  ),
-                  ElevatedButton(
-                      onPressed: entradaDados, child: Text("Pressione")),
-                ]),
-              ),
-            ),
-          )
-          /* ----------------------------------------------------------------------
+
+        /* ----------------------------------------------------------------------
               !!                  FIM DA IMPLEMENTAÇÃO                     !!                      
         ---------------------------------------------------------------------- */
-          ),
+      ),
     );
   }
 }
