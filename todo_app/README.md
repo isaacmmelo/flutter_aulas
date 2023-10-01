@@ -1,3 +1,5 @@
 # todo_app
 
-Um projeto utilizando banco de dados local
+Projeto Flutter demonstrando utilização de um Banco de Dados Local
+Utilização do Botão Slider do iOS
+Utilização de Box para registro de dados
