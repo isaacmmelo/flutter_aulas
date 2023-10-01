@@ -1,3 +1,4 @@
 # app_navigation
 
-A new Flutter project.
+Um projeto mostrando navegação estática.
+Recarrega a página totalmente ao utilizar a rota
