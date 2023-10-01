@@ -1,5 +1,5 @@
 
-# Agora vamos com Flutter
+# Dicas Iniciais do Flutter
 
 > **💡 DICA**  
 Para testar os códigos abaixo é necessario que tenha assistido a <Aula de Dart e Flutter - Colocar link> e instalado corretamente os programas mostrados. <br /><br />
