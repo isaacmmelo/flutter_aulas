@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   // ignore: must_call_super
   @override
   void initState() {
+    super.initState();
     // Se for a primeira vez abrindo o aplicativo, criaremos o Banco de Dados
     if (_toDobox.get("TODOLIST") == null) {
       db.createInitialData();
