@@ -6,6 +6,7 @@ import 'package:todo_app/components/todo_list.dart';
 import 'package:todo_app/data/database.dart';
 
 class HomePage extends StatefulWidget {
+  // ignore: prefer_const_constructors_in_immutables
   HomePage({super.key});
 
   @override
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   final _toDobox = Hive.box('toDobox');
   ToDoDataBase db = ToDoDataBase();
 
+  // ignore: must_call_super
   @override
   void initState() {
     // Se for a primeira vez abrindo o aplicativo, criaremos o Banco de Dados
@@ -27,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  final String _pageTitle = "Home Page";
+  final String _pageTitle = "ToDo App";
 
   final _controller = TextEditingController();
 
@@ -41,8 +43,8 @@ class _HomePageState extends State<HomePage> {
   void saveNewTask() {
     setState(() {
       db.toDoList.add([_controller.text, false]);
-      _controller.clear();
     });
+    _controller.clear();
     Navigator.of(context).pop();
     db.updateDataBase();
   }
