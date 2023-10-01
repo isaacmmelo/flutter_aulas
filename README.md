@@ -20,7 +20,7 @@ Prof. Isaac Mendes
 ## Para Dart vá para dart_introdução
 ## Para Flutter vá para exemplo_app
 ## Para Navegação Estática, vá para app_navigation_static
-## Para Navegação Reativa, vá para app_navigation_react (🚧 CONSTRUÇÃO)
+## Para Navegação Reativa, vá para app_navigation_react
 ## Para Demonstração de Banco de Dados Local, vá para todo_app
 ## Para Utilização do Backend Firebase, vá para [...] (🚧 CONSTRUÇÃO)
 ## Para Utilização do Backend Parse, vá para [...] (🚧 CONSTRUÇÃO)
