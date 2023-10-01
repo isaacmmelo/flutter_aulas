@@ -19,9 +19,9 @@ Prof. Isaac Mendes
 
 ## [Introdução a Dart](https://github.com/isaacmmelo/flutter_aulas/tree/main/dart_introdu%C3%A7%C3%A3o)
 ## [Introdução a Flutter](https://github.com/isaacmmelo/flutter_aulas/tree/main/exemplo_app)
-## Para Navegação Estática, vá para app_navigation_static
-## Para Navegação Reativa, vá para app_navigation_react
-## Para Demonstração de Banco de Dados Local, vá para todo_app
+## [Navegação Estática](https://github.com/isaacmmelo/flutter_aulas/tree/main/app_navigation_static)
+## [Navegação Reativa](https://github.com/isaacmmelo/flutter_aulas/tree/main/app_navigation_react)
+## [Aplicativo com banco de dados Local (ToDo App)](https://github.com/isaacmmelo/flutter_aulas/tree/main/todo_app)
 ## Para Utilização do Backend Firebase, vá para [...] (🚧 CONSTRUÇÃO)
 ## Para Utilização do Backend Parse, vá para [...] (🚧 CONSTRUÇÃO)
 
