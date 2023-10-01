@@ -8,9 +8,9 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: MyAppBar("I N T R O  P A G E"),
+      appBar: MyAppBar('I N T R O P A G E'),
       drawer: MyDrawer(),
-      body: Center(child: Text("Utilize o Drawer para navegar")),
+      body: Center(child: Text("Intro")),
     );
   }
 }

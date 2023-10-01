@@ -22,7 +22,9 @@ class MyDrawer extends StatelessWidget {
             color: Colors.white,
           ),
           title: Text("Home", style: TextStyle(color: Colors.white)),
-          onTap: () => Navigator.pushNamed(context, '/homepage'),
+          onTap: () {
+            Navigator.pushNamed(context, '/homepage');
+          },
         ),
         ListTile(
           leading: Icon(

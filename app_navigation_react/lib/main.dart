@@ -1,4 +1,5 @@
-import 'package:app_navigation_react/pages/config.dart';
+import 'package:app_navigation_react/pages/initial.dart';
+import 'package:app_navigation_react/pages/settings.dart';
 import 'package:app_navigation_react/pages/home.dart';
 import 'package:app_navigation_react/pages/intro.dart';
 import 'package:app_navigation_react/pages/profile.dart';
@@ -20,7 +21,8 @@ class MainApp extends StatelessWidget {
       routes: {
         '/homepage': (context) => const HomePage(),
         '/intropage': (context) => const IntroPage(),
-        '/config': (context) => const ConfigPage(),
+        '/inicial': (context) => const InitialPage(),
+        '/config': (context) => const SettingPage(),
         '/profile': (context) => const ProfilePage(),
       },
     );

@@ -21,25 +21,18 @@ class MyDrawer extends StatelessWidget {
             Icons.home,
             color: Colors.white,
           ),
-          title: Text("Home", style: TextStyle(color: Colors.white)),
+          title: Text("Home Page", style: TextStyle(color: Colors.white)),
           onTap: () => Navigator.pushNamed(context, '/homepage'),
         ),
         ListTile(
+          //Utilizamos o ListTitle para podemos criar os títula e espaço de navegação
           leading: Icon(
-            Icons.person,
+            Icons.account_balance,
             color: Colors.white,
           ),
-          title: Text("Perfil", style: TextStyle(color: Colors.white)),
-          onTap: () => Navigator.pushNamed(context, '/profile'),
+          title: Text("Intro Page", style: TextStyle(color: Colors.white)),
+          onTap: () => Navigator.pushNamed(context, '/intropage'),
         ),
-        ListTile(
-          leading: Icon(
-            Icons.settings,
-            color: Colors.white,
-          ),
-          title: Text("Configurações", style: TextStyle(color: Colors.white)),
-          onTap: () => Navigator.pushNamed(context, '/config'),
-        )
       ]),
     );
   }
