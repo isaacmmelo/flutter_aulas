@@ -1,4 +1,6 @@
-class Products {
+import 'package:flutter/material.dart';
+
+class Products extends ChangeNotifier {
   final String name;
   final String price;
   final String imagePath;
