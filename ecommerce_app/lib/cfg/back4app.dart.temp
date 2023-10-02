@@ -1,0 +1,5 @@
+class Back4App {
+  final keyApplicationId = '...';
+  final keyClientKey = '...';
+  final keyParseServerUrl = '...';
+}
