@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/models/cart.dart';
+import 'package:ecommerce_app/pages/aboutPage.dart';
 import 'package:ecommerce_app/pages/homePage.dart';
 import 'package:ecommerce_app/pages/introPage.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,8 @@ class ECommerceApp extends StatelessWidget {
         home: const IntroPage(),
         routes: {
           '/homepage': (context) => HomePage(),
-          '/intropage': (context) => const IntroPage()
+          '/intropage': (context) => const IntroPage(),
+          '/aboutpage': (context) => const AboutPage()
         },
       ),
     );

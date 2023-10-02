@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/components/myFavoriteButton.dart';
 import 'package:ecommerce_app/models/products.dart';
 import 'package:flutter/material.dart';
 
@@ -5,7 +6,12 @@ import 'package:flutter/material.dart';
 class ProductsTile extends StatelessWidget {
   Products product;
   void Function()? onTap;
-  ProductsTile({super.key, required this.product, required this.onTap});
+  void Function()? favoriteTap;
+  ProductsTile(
+      {super.key,
+      required this.product,
+      required this.onTap,
+      required this.favoriteTap});
 
   @override
   Widget build(BuildContext context) {
@@ -51,20 +57,36 @@ class ProductsTile extends StatelessWidget {
                   Text(product.price)
                 ],
               ),
+
               //Button to add cart
-              GestureDetector(
-                onTap: () => onTap,
-                child: Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            bottomRight: Radius.circular(12))),
-                    child: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    )),
+              Row(
+                children: [
+                  GestureDetector(
+                      onTap: favoriteTap,
+                      child: Container(
+                          padding: const EdgeInsets.all(20),
+                          decoration: const BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(12),
+                              )),
+                          child: MyFavoriteButton(isActive: product.favorite))),
+
+                  //Button to add cart
+                  GestureDetector(
+                    onTap: onTap,
+                    child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: const BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(12))),
+                        child: const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        )),
+                  ),
+                ],
               ),
             ],
           ),

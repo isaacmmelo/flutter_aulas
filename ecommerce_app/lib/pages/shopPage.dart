@@ -14,16 +14,29 @@ class ShopPage extends StatefulWidget {
 class _ShopPageState extends State<ShopPage> {
   //Add item to cart
   void onTap(Products product) {
-    print('testeasdasdas');
-    //Provider.of<Cart>(context, listen: false).addItemToCart(product);
+    Provider.of<Cart>(context, listen: false).addItemToCart(product);
 
     //Alerta
-    /* showDialog(
+    showDialog(
         context: context,
         builder: (context) => const AlertDialog(
               title: Text("Adicionado com sucesso"),
               content: Text("Verifique o carrinho"),
-            )); */
+            ));
+  }
+
+  //Favorite item
+  void favoriteTap(Products product) {
+    if (!product.favorite) {
+      Provider.of<Cart>(context, listen: false).addItemToFavorits(product);
+    } else {
+      Provider.of<Cart>(context, listen: false).removeItemFromFavorits(product);
+    }
+
+    //Alerta
+    setState(() {
+      product.favorite = !product.favorite;
+    });
   }
 
   @override
@@ -87,6 +100,7 @@ class _ShopPageState extends State<ShopPage> {
                     return ProductsTile(
                       product: product,
                       onTap: () => onTap(product),
+                      favoriteTap: () => favoriteTap(product),
                     );
                   },
                 )),
@@ -98,7 +112,7 @@ class _ShopPageState extends State<ShopPage> {
                   ),
                 ),
 
-/*                 //Products Tiles
+                //Products Tiles
                 Expanded(
                     child: ListView.builder(
                   itemCount: 4,
@@ -108,10 +122,11 @@ class _ShopPageState extends State<ShopPage> {
 
                     return ProductsTile(
                       product: product,
-                      onTap: () => addProductToCart(product),
+                      onTap: () => onTap(product),
+                      favoriteTap: () => favoriteTap(product),
                     );
                   },
-                )), */
+                )),
               ],
             ));
   }

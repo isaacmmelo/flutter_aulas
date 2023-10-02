@@ -10,27 +10,31 @@ class Cart extends ChangeNotifier {
         imagePath: 'lib/images/shoe1.png',
         description: 'Um tênis legal',
         popular: true,
+        favorite: false,
         category: 'Shoe'),
     Products(
-        name: 'Tenis Nike Jordan',
-        price: 'R\$ 329,90',
+        name: 'Tenis QC',
+        price: 'R\$ 229,90',
         imagePath: 'lib/images/shoe2.png',
         description: 'Um tênis legal',
         popular: true,
+        favorite: false,
         category: 'Shoe'),
     Products(
-        name: 'Tenis Nike Jordan',
+        name: 'Tenis Nike Verde',
         price: 'R\$ 329,90',
         imagePath: 'lib/images/shoe3.png',
         description: 'Um tênis legal',
         popular: true,
+        favorite: false,
         category: 'Shoe'),
     Products(
-        name: 'Tenis Nike Jordan',
+        name: 'Tenis Colorido',
         price: 'R\$ 329,90',
         imagePath: 'lib/images/shoe4.png',
         description: 'Um tênis legal',
         popular: true,
+        favorite: false,
         category: 'Shoe')
   ];
 
@@ -41,32 +45,39 @@ class Cart extends ChangeNotifier {
         imagePath: 'lib/images/product1.png',
         description: 'Uma raquete legal',
         popular: true,
+        favorite: false,
         category: 'Other'),
     Products(
-        name: 'Raquete de Tenis',
+        name: 'Raquetes de Tenis',
         price: 'R\$ 329,90',
         imagePath: 'lib/images/product2.png',
-        description: 'Uma raquete legal',
+        description: 'Duas raquetes legais',
         popular: true,
+        favorite: false,
         category: 'Other'),
     Products(
-        name: 'Raquete de Tenis',
+        name: 'Bola de futebol Nike',
         price: 'R\$ 329,90',
         imagePath: 'lib/images/product3.png',
-        description: 'Uma raquete legal',
+        description: 'Uma bola legal',
         popular: true,
+        favorite: false,
         category: 'Other'),
     Products(
-        name: 'Raquete de Tenis',
+        name: 'Bola de basquete',
         price: 'R\$ 329,90',
         imagePath: 'lib/images/product4.png',
-        description: 'Uma raquete legal',
+        description: 'Uma bola legal',
         popular: true,
+        favorite: false,
         category: 'Other'),
   ];
 
   //Lista de produtos no carrinho
   List<Products> userCart = [];
+
+  //Lista de produtos favoritos
+  List<Products> userFavorits = [];
 
   //Get lista de produtos a venda
   List<Products> getProductsList1() {
@@ -82,6 +93,10 @@ class Cart extends ChangeNotifier {
     return userCart;
   }
 
+  List<Products> getUserFav() {
+    return userFavorits;
+  }
+
   void addItemToCart(Products product) {
     userCart.add(product);
     notifyListeners();
@@ -90,6 +105,17 @@ class Cart extends ChangeNotifier {
   //Remove itens do carrinho
   void removeItemFromCart(Products product) {
     userCart.remove(product);
+    notifyListeners();
+  }
+
+  void addItemToFavorits(Products product) {
+    userFavorits.add(product);
+    notifyListeners();
+  }
+
+  //Remove itens do carrinho
+  void removeItemFromFavorits(Products product) {
+    userFavorits.remove(product);
     notifyListeners();
   }
 }

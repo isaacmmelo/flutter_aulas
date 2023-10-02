@@ -6,6 +6,7 @@ class Products extends ChangeNotifier {
   final String imagePath;
   final String description;
   final bool popular;
+  bool favorite;
   final String category;
 
   Products(
@@ -14,5 +15,10 @@ class Products extends ChangeNotifier {
       required this.imagePath,
       required this.description,
       required this.popular,
+      required this.favorite,
       required this.category});
+
+  bool isFavorite(Products product) {
+    return product.favorite;
+  }
 }

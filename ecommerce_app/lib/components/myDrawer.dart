@@ -53,7 +53,7 @@ class MyDrawer extends StatelessWidget {
                       color: Colors.white,
                     ),
                     title: Text("Sobre", style: TextStyle(color: Colors.white)),
-                    onTap: () => Navigator.pushNamed(context, '/homepage'),
+                    onTap: () => Navigator.pushNamed(context, '/aboutpage'),
                   ),
                 ),
               ],
