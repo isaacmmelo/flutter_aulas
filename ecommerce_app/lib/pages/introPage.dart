@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/controller/productController.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {
@@ -34,6 +35,7 @@ class IntroPage extends StatelessWidget {
             //Button Entrar
             GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/homepage'),
+              //onTap: () => ProductController.getProductList(),
               child: Container(
                 decoration: BoxDecoration(
                     color: Colors.grey[900],

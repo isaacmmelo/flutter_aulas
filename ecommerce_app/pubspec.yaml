@@ -13,6 +13,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   provider: 
   parse_server_sdk_flutter: ^6.0.0
+  http: ^0.13.6
 
 
 dev_dependencies:
