@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* // ignore: unused_import
+=======
+// ignore: unused_import
+>>>>>>> 798ac9c1b57b87346d3c7c977b7766ecf340d248
 import 'dart:convert';
 
 import 'package:ecommerce_app/cfg/back_4_app.dart';
