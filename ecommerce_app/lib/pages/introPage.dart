@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+// ignore_for_file: unused_field
+
 import 'package:ecommerce_app/data/b4a/connect_b4a.dart';
-=======
 // ignore: unused_import
 import 'package:ecommerce_app/controller/productController.dart';
->>>>>>> 798ac9c1b57b87346d3c7c977b7766ecf340d248
+
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatefulWidget {

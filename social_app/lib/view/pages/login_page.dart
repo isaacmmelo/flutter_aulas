@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/view/components/my_button.dart';
 import 'package:social_app/view/components/my_textfield.dart';
-import 'package:social_app/view/helpers/interface_helpers.dart';
 import 'package:social_app/view/helpers/rout_helpers.dart';
 
 // ignore: must_be_immutable
