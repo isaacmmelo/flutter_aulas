@@ -1,8 +1,8 @@
 //Páginas principais do Aplicativo
 //import 'package:ecommerce_app/data/b4a/connect_b4a.dart';
-import 'package:ecommerce_app/pages/aboutPage.dart';
-import 'package:ecommerce_app/pages/homePage.dart';
-import 'package:ecommerce_app/pages/introPage.dart';
+import 'package:ecommerce_app/pages/about_page.dart';
+import 'package:ecommerce_app/pages/home_page.dart';
+import 'package:ecommerce_app/pages/intro_page.dart';
 //Pacotes do Framework
 import 'package:flutter/material.dart';
 //Pacotes para utilização dos providers

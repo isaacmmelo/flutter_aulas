@@ -1,5 +1,5 @@
 // ignore: unused_import
-import 'package:ecommerce_app/controller/productController.dart';
+import 'package:ecommerce_app/controller/product_controller.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {

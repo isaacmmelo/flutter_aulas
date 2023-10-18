@@ -1,6 +1,6 @@
 // ignore: unused_import
 import 'package:ecommerce_app/cfg/back_4_app.dart';
-import 'package:ecommerce_app/models/productModel.dart';
+import 'package:ecommerce_app/models/product_model.dart';
 import 'package:http/http.dart';
 
 class ProductController {
@@ -16,8 +16,8 @@ class ProductController {
       'X-Parse-REST-API-Key': cfg.restApiKey,
     });
 
-    print("Code is ${response.statusCode}");
-    print("Response is ${response.body}");
+    //print("Code is ${response.statusCode}");
+    //print("Response is ${response.body}");
 
     if (response.statusCode == 200) {
       var body = ProductModelData.fromJson(response.body);

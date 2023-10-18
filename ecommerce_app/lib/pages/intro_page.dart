@@ -1,8 +1,8 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, unused_element
 
 import 'package:ecommerce_app/data/b4a/connect_b4a.dart';
 // ignore: unused_import
-import 'package:ecommerce_app/controller/productController.dart';
+import 'package:ecommerce_app/controller/product_controller.dart';
 
 import 'package:flutter/material.dart';
 

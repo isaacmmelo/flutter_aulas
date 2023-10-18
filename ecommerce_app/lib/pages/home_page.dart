@@ -1,9 +1,9 @@
 import 'package:ecommerce_app/components/my_appbar.dart';
 import 'package:ecommerce_app/components/my_bottombar.dart';
 import 'package:ecommerce_app/components/my_drawer.dart';
-import 'package:ecommerce_app/pages/cartPage.dart';
-import 'package:ecommerce_app/pages/favoritePage.dart';
-import 'package:ecommerce_app/pages/shopPage.dart';
+import 'package:ecommerce_app/pages/cart_page.dart';
+import 'package:ecommerce_app/pages/favorit_page.dart';
+import 'package:ecommerce_app/pages/shop_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
