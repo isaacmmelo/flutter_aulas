@@ -21,7 +21,7 @@ class ToDoList extends StatelessWidget {
       padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
       child: Slidable(
         endActionPane: ActionPane(
-          motion: StretchMotion(),
+          motion: const StretchMotion(),
           children: [
             SlidableAction(
               onPressed: deleteFunction,

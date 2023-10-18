@@ -1,5 +1,5 @@
-import 'package:ecommerce_app/components/myAppBar.dart';
-import 'package:ecommerce_app/components/myDrawer.dart';
+import 'package:ecommerce_app/components/my_appbar.dart';
+import 'package:ecommerce_app/components/my_drawer.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
@@ -9,8 +9,8 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      appBar: MyAppBar(),
-      drawer: MyDrawer(),
+      appBar: const MyAppBar(),
+      drawer: const MyDrawer(),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(25.0),

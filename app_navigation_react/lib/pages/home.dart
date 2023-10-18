@@ -1,6 +1,6 @@
-import 'package:app_navigation_react/components/myAppBar.dart';
-import 'package:app_navigation_react/components/myDrawer.dart';
-import 'package:app_navigation_react/components/myNavBar.dart';
+import 'package:app_navigation_react/components/my_appbar.dart';
+import 'package:app_navigation_react/components/my_drawer.dart';
+import 'package:app_navigation_react/components/my_navbar.dart';
 import 'package:app_navigation_react/pages/initial.dart';
 import 'package:app_navigation_react/pages/profile.dart';
 import 'package:app_navigation_react/pages/settings.dart';
@@ -18,13 +18,13 @@ class _HomePageState extends State<HomePage> {
 
   final List _pages = [
     //homepage
-    InitialPage(),
+    const InitialPage(),
 
     //Profile
-    ProfilePage(),
+    const ProfilePage(),
 
     //Settings
-    SettingPage(),
+    const SettingPage(),
   ];
 
   void _selectPage(int index) {
@@ -36,8 +36,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar("H O M E  P A G E"),
-      drawer: MyDrawer(),
+      appBar: const MyAppBar("H O M E  P A G E"),
+      drawer: const MyDrawer(),
       bottomNavigationBar: MyNavBar(_selectedIndex, _selectPage),
       body: _pages[_selectedIndex],
     );

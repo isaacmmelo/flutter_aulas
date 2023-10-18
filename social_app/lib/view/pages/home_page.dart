@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      drawer: Drawer(),
+      drawer: const Drawer(),
       //bottomNavigationBar: BottomNavigationBar(items: []),
     );
   }

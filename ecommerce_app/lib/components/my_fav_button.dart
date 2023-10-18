@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyFavoriteButton extends StatelessWidget {
   final bool isActive;
-  MyFavoriteButton({super.key, required this.isActive});
+  const MyFavoriteButton({super.key, required this.isActive});
 
   @override
   Widget build(BuildContext context) {

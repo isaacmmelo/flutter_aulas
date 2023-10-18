@@ -24,7 +24,7 @@ class SocialApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/register': (context) => RegisterPage(),
         '/forgotPass': (context) => ForgotPage(),
-        '/homePage': (context) => HomePage(),
+        '/homePage': (context) => const HomePage(),
       },
     );
   }

@@ -1,5 +1,5 @@
-import 'package:app_navigation/components/myAppBar.dart';
-import 'package:app_navigation/components/myDrawer.dart';
+import 'package:app_navigation/components/my_appbar.dart';
+import 'package:app_navigation/components/my_drawer.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/components/favItem.dart';
+import 'package:ecommerce_app/components/fav_item.dart';
 import 'package:ecommerce_app/models/cart.dart';
 import 'package:ecommerce_app/models/products.dart';
 import 'package:flutter/material.dart';

@@ -9,7 +9,7 @@ class ProductController {
 
   //READ
   static Future getProductList() async {
-    Uri apiUrl = Uri.parse(_baseUrl + "Product");
+    Uri apiUrl = Uri.parse("${_baseUrl}Product");
 
     Response response = await get(apiUrl, headers: {
       'X-Parse-Application-Id': cfg.keyApplicationId,
