@@ -4,12 +4,12 @@ import 'package:todo_app/pages/home.dart';
 
 void main() async {
   //Precisamos da função asyncrona para carregar o Hive
+  //Essa função é executa de forma separada da função principal do aplicativo
 
   //Inicializar o Hive
   await Hive.initFlutter();
 
   //Abrindo a box do Hive
-  // ignore: unused_local_variable
   var box = await Hive.openBox('toDobox');
 
   runApp(const MainApp());

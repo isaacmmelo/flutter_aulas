@@ -22,6 +22,7 @@ Prof. Isaac Mendes
 ## [Navegação Estática](https://github.com/isaacmmelo/flutter_aulas/tree/main/app_navigation_static)
 ## [Navegação Reativa](https://github.com/isaacmmelo/flutter_aulas/tree/main/app_navigation_react)
 ## [Aplicativo com banco de dados Local (ToDo App)](https://github.com/isaacmmelo/flutter_aulas/tree/main/todo_app)
+## [Aplicativo SocialApp - Aula 17/10](https://github.com/isaacmmelo/flutter_aulas/tree/main/social_app)
 ## Para Utilização do Backend Firebase, vá para [...] (🚧 CONSTRUÇÃO)
 ## Para Utilização do Backend Parse, vá para [...] (🚧 CONSTRUÇÃO)
 

@@ -1,5 +1,18 @@
-# todo_app
+# Aplicativo ToDo com banco de dados locais
 
-Projeto Flutter demonstrando utilização de um Banco de Dados Local
-Utilização do Botão Slider do iOS
-Utilização de Box para registro de dados
+Projeto Flutter com implementação de: 
+<br/>  - Banco de Dados Local com Hive
+<br/>  - Botão Slider do iOS
+
+## Banco de dados Hiv
+´´´dart
+  //Precisamos da função asyncrona para carregar o Hive
+  //Essa função é executa de forma separada da função principal do aplicativo
+
+  //Inicializar o Hive
+  await Hive.initFlutter();
+
+  //Abrindo a box do Hive
+  var box = await Hive.openBox('toDobox');
+
+´´´
