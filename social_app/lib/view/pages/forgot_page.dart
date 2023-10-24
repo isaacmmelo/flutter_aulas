@@ -21,16 +21,17 @@ class ForgotPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //Ícone do Sistema
-              Icon(
-                Icons.person,
-                size: 80,
-                color: Theme.of(context).colorScheme.inversePrimary,
+              ClipRRect(
+                child: Image.asset(
+                  'lib/images/appIcon.png',
+                  height: 80,
+                ),
               ),
               //Espaço embranco
               const SizedBox(height: 5),
               //Nome do Aplicativo
               const Text(
-                'S O C I A L',
+                'D A S H  S O C I A L',
                 style: TextStyle(fontSize: 20),
               ),
               //Espaço em branco

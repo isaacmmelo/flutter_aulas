@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/view/components/my_appbar.dart';
+import 'package:social_app/view/components/my_bottombar.dart';
+import 'package:social_app/view/components/my_drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,10 +15,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      appBar: MyAppBar(),
+      drawer: MyDrawer(),
+      bottomNavigationBar: MyBottomNavBar(
+        onTabChange: (p0) => (),
       ),
-      drawer: const Drawer(),
       //bottomNavigationBar: BottomNavigationBar(items: []),
     );
   }

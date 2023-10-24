@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/view/components/my_progressindicator.dart';
 
 void displayMessage(String message, BuildContext context) {
   showDialog(
@@ -9,11 +10,11 @@ void displayMessage(String message, BuildContext context) {
   );
 }
 
-void loadingCircle(BuildContext context) {
+void loadingCircleDialog(BuildContext context) {
   showDialog(
     context: context,
     builder: (context) => const Center(
-      child: CircularProgressIndicator(),
+      child: MyProgressIndicator(text: ""),
     ),
   );
 }
