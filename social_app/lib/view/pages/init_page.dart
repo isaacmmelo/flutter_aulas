@@ -17,48 +17,66 @@ class InitPage extends StatefulWidget {
 class _InitPageState extends State<InitPage> {
   //Iniciando o B4App Controller
   final B4AppController _backController = B4AppController();
+  //Variáveis para a página
   String _text = "Ajustando as coisas";
-  bool state = false;
+  bool _state = false;
 
-  void _changeText(String text) {
-    setState(() {
-      _text = text;
-    });
-  }
-
+  //Método inicial para checar a conexão
   @override
   void initState() {
     super.initState();
-
     //Verificar se está conectado
-    _backController.checkConnection().then((value) => state);
+    log('InitPage: Checando Conexão');
+    _checkConnection();
+  }
 
-    if (state) {
-      _changeText('Redirecionando para o Login');
+  //Função para alterar o estado do Widget
+  void _changeText(String text) {
+    log('InitPage: Alterando texto $text');
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      setState(() {
+        _text = text;
+      });
+    });
+  }
+
+  //Método para checar a conexão
+  void _checkConnection() async {
+    //Se o State for positivo, está conectado
+    if (_state) {
+      log('InitPage: Conectado 1');
+      _changeText('Redirecionando para o login');
       goToLogin(context);
     } else {
-      _changeText('Conectando ao Bakcend');
-      _backController.initBackend().then((value) => state);
-      if (state) {
-        _changeText('Conectado, redirecionando para o Login');
+      //Se não, tenta a conexão
+      log('InitPage: Não conectado, conectando');
+      _changeText('Conectando ao Backend');
+      _state = _backController.initBackend();
+      //Se o estado após a conexão for verdadeiro
+      if (_state) {
+        //Redirecina para o login
+        log('InitPage: Conectado 2');
+        _changeText('Redirecionando para o login');
         goToLogin(context);
       } else {
-        _changeText('Erro ao conectar, reinicie o aplicativo');
-        goToLogin(context);
+        //Exibe o erro e solicita reinicio
+        log('InitPage: Erro ao conectar');
+        _changeText('Erro ao conectar');
+        _changeText('Reinicie o aplicativo');
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget body = Center(
+      child: MyProgressIndicator(text: _text),
+    );
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Center(
-        child: GestureDetector(
-          child: MyProgressIndicator(text: _text),
-          onTap: () => goToLogin(context),
-        ),
-      ),
+      body: body,
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/view/components/my_button.dart';
 import 'package:social_app/view/components/my_textfield.dart';
-import 'package:social_app/view/helpers/interface_helpers.dart';
 import 'package:social_app/view/helpers/rout_helpers.dart';
 
 // ignore: must_be_immutable
@@ -13,14 +12,16 @@ class RegisterPage extends StatelessWidget {
   TextEditingController controllerPass = TextEditingController();
   TextEditingController controllerConfirmPass = TextEditingController();
 
+  void _registerUser() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: const EdgeInsets.all(25.0),
-        child: SingleChildScrollView(
-          child: Center(
+        child: Center(
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,9 +72,7 @@ class RegisterPage extends StatelessWidget {
                 //Botão de login
                 MyButton(
                   buttonText: 'Registrar',
-                  onTapButton: () {
-                    displayMessage('Registrado', context);
-                  },
+                  onTapButton: _registerUser,
                 ),
                 //Espaço em branco
                 const SizedBox(height: 20),

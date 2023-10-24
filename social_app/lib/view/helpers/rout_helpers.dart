@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 void goToLogin(context) {
-  Navigator.pushNamed(context, '/login');
+  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    Navigator.pushNamed(context, '/login');
+  });
 }
 
 void goToRegister(context) {
