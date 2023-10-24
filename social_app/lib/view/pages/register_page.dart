@@ -1,18 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/controller/controllers/user.dart';
 import 'package:social_app/view/components/my_button.dart';
 import 'package:social_app/view/components/my_textfield.dart';
+import 'package:social_app/view/helpers/interface_helpers.dart';
 import 'package:social_app/view/helpers/rout_helpers.dart';
 
 // ignore: must_be_immutable
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   RegisterPage({super.key});
 
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  UserController userController = UserController();
+  bool status = false;
+
   TextEditingController controllerUserName = TextEditingController();
+
   TextEditingController controllerEmail = TextEditingController();
+
   TextEditingController controllerPass = TextEditingController();
+
   TextEditingController controllerConfirmPass = TextEditingController();
 
-  void _registerUser() {}
+  void _registerUser() {
+    loadingCircleDialog(context);
+    if (controllerPass.text != controllerConfirmPass.text) {
+      displayMessage("Senhas diferentes", context);
+      Navigator.pop(context);
+    } else {
+      userController
+          .userRegister(controllerUserName, controllerEmail, controllerPass)
+          .then((value) => status);
+      if (status) {
+        displayMessage("Ok", context);
+      } else {
+        displayMessage("erro", context);
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

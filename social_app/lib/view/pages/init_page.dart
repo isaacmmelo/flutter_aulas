@@ -3,7 +3,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:social_app/controller/controller/b4app_controller.dart';
+import 'package:social_app/controller/controllers/b4app_controller.dart';
 import 'package:social_app/view/components/my_progressindicator.dart';
 import 'package:social_app/view/helpers/rout_helpers.dart';
 
