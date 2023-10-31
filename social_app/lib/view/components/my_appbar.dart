@@ -10,7 +10,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       actions: [
         IconButton(
-            onPressed: () => Navigator.pushNamed(context, '/intropage'),
+            onPressed: () => Navigator.pushNamed(context, '/login'),
             icon: Icon(
               Icons.logout_rounded,
               color: Theme.of(context).colorScheme.inversePrimary,
