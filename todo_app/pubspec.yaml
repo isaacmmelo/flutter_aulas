@@ -13,6 +13,7 @@ dependencies:
   hive_flutter: ^1.1.0
   flutter_slidable: ^1.2.0
   getwidget: ^4.0.0
+  email_validator: ^2.1.17
 
 dev_dependencies:
   flutter_test:

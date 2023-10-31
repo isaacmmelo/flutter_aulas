@@ -3,42 +3,53 @@ import 'package:social_app/controller/controllers/user_controller.dart';
 import 'package:social_app/view/components/my_button.dart';
 import 'package:social_app/view/components/my_textfield.dart';
 import 'package:social_app/view/helpers/interface_helpers.dart';
+import 'package:social_app/view/helpers/parseErros_helpers.dart';
 import 'package:social_app/view/helpers/rout_helpers.dart';
+import 'package:social_app/view/validators/register_validator.dart';
 
 // ignore: must_be_immutable
 class RegisterPage extends StatefulWidget {
-  RegisterPage({super.key});
+  const RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  //Variáveis da página
   UserController userController = UserController();
   bool status = false;
+  String text = 'Estamos trabalhando';
+  final _formKey = GlobalKey<FormState>();
 
+  //Controllers dos formulários
   TextEditingController controllerUserName = TextEditingController();
-
   TextEditingController controllerEmail = TextEditingController();
-
   TextEditingController controllerPass = TextEditingController();
-
   TextEditingController controllerConfirmPass = TextEditingController();
+  TextEditingController controllerFullName = TextEditingController();
 
-  void _registerUser() {
+  //Função para registrar o usuário
+  void _registerUser() async {
     loadingCircleDialog(context);
-    if (controllerPass.text != controllerConfirmPass.text) {
-      displayMessage("Senhas diferentes", context);
-      Navigator.pop(context);
+    status = await userController.userRegister(controllerUserName,
+        controllerEmail, controllerPass, controllerFullName);
+
+    // Confere se a resposta do awati já foi efetuada
+    if (!context.mounted) return;
+
+    if (status) {
+      Navigator.of(context).pop;
+      displayConfirmationMessage(
+        "Registrado com sucesso. Confirme seu e-mail e faça o login.",
+        context,
+        () => goToLogin(context),
+      );
     } else {
-      userController
-          .userRegister(controllerUserName, controllerEmail, controllerPass)
-          .then((value) => status);
-      if (status) {
-        displayMessage("Ok", context);
-      } else {
-        displayMessage("erro", context);
-      }
+      Navigator.pop(context);
+      String messageError = returnMessageErrorPtBr(userController.errorCode);
+      displayMessage(messageError, context);
+      Navigator.of(context).pop;
     }
   }
 
@@ -61,49 +72,100 @@ class _RegisterPageState extends State<RegisterPage> {
                     height: 80,
                   ),
                 ),
+
                 //Espaço embranco
                 const SizedBox(height: 5),
+
                 //Nome do Aplicativo
                 const Text(
                   'D A S H  S O C I A L',
                   style: TextStyle(fontSize: 20),
                 ),
+
                 //Espaço em branco
                 const SizedBox(height: 25),
-                //Input do nome
-                MyTextField(
-                    hintText: 'Nome',
-                    obscureText: false,
-                    controller: controllerUserName),
-                //Espaço em branco
-                const SizedBox(height: 10),
-                //Input do email
-                MyTextField(
-                    hintText: 'E-mail',
-                    obscureText: false,
-                    controller: controllerEmail),
-                const SizedBox(height: 10),
-                //Input da senha
-                MyTextField(
-                    hintText: 'Senha',
-                    obscureText: true,
-                    controller: controllerPass),
-                const SizedBox(height: 10),
-                //Input da confirme a senha
-                MyTextField(
-                    hintText: 'Confirme a Senha',
-                    obscureText: true,
-                    controller: controllerConfirmPass),
+
+                //Formulário de registro
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      //Input do Nome Completo
+                      MyTextField(
+                        hintText: 'Nome Completo',
+                        obscureText: false,
+                        controller: controllerFullName,
+                        validator: (value) => validateUserName(value),
+                        keyboardType: TextInputType.name,
+                      ),
+
+                      //Espaço em branco
+                      const SizedBox(height: 10),
+                      //Input do nome
+                      MyTextField(
+                        hintText: 'Nome de usuário',
+                        obscureText: false,
+                        controller: controllerUserName,
+                        validator: (value) => validateUserName(value),
+                        keyboardType: TextInputType.name,
+                      ),
+
+                      //Espaço em branco
+                      const SizedBox(height: 10),
+
+                      //Input do email
+                      MyTextField(
+                        hintText: 'E-mail',
+                        obscureText: false,
+                        controller: controllerEmail,
+                        validator: (value) => validateEmail(value),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+
+                      //Espaço em branco
+                      const SizedBox(height: 10),
+
+                      //Input da senha
+                      MyTextField(
+                        hintText: 'Senha',
+                        obscureText: true,
+                        controller: controllerPass,
+                        validator: (value) => validatePassword(value),
+                        keyboardType: TextInputType.visiblePassword,
+                      ),
+
+                      //Espaço em branco
+                      const SizedBox(height: 10),
+
+                      //Input da confirme a senha
+                      MyTextField(
+                        hintText: 'Confirme a Senha',
+                        obscureText: true,
+                        controller: controllerConfirmPass,
+                        validator: (value) =>
+                            validateConfirmPassword(value, controllerPass.text),
+                        keyboardType: TextInputType.visiblePassword,
+                      ),
+
+                      //Espaço em branco
+                      const SizedBox(height: 20),
+
+                      //Botão de login
+                      MyButton(
+                        buttonText: 'Registrar',
+                        onTapButton: () {
+                          if (_formKey.currentState!.validate()) {
+                            _registerUser();
+                          }
+                        },
+                      ),
+                    ],
+                  ),
+                ),
 
                 //Espaço em branco
                 const SizedBox(height: 20),
-                //Botão de login
-                MyButton(
-                  buttonText: 'Registrar',
-                  onTapButton: _registerUser,
-                ),
-                //Espaço em branco
-                const SizedBox(height: 20),
+
                 //Possui uma conta? Faça login
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

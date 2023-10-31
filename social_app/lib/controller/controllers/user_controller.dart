@@ -1,19 +1,22 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 class UserController {
+  late String errorCode;
+
   //Função de registrar usuário
   Future<bool> userRegister(
     //Construtores do formulário
     TextEditingController controllerUsername,
     TextEditingController controllerEmail,
     TextEditingController controllerPassword,
+    TextEditingController controllerFullName,
   ) async {
     //Definindo variáveis finais de usuário
     final String username = controllerUsername.text.trim();
     final String email = controllerEmail.text.trim();
     final String password = controllerPassword.text.trim();
+    final String fullName = controllerFullName.text.trim();
 
     /* ---- 
       O NOSSO BANCO DE DADOS SEGUE A ESTRUTURA DE:
@@ -31,7 +34,7 @@ class UserController {
     if (responseAddress.success) {
       //Criando um perfil em branco, somente com o campo blank setado como true
       final ParseObject profileData = ParseObject('Profile')
-        ..set('fullName', username)
+        ..set('fullName', fullName)
         ..set('addressId',
             ParseObject('Address')..objectId = addressData.objectId)
         ..set('blank', true);
@@ -48,19 +51,21 @@ class UserController {
 
         if (responseUser.success) {
           //registrado, redireciona para o usuário
+          return true;
         } else {
           //erro no usuário
+          errorCode = responseUser.statusCode.toString();
           return false;
         }
       } else {
         //erro no profile
+        errorCode = responseProfile.statusCode.toString();
         return false;
       }
     } else {
       //erro no endereço
+      errorCode = responseAddress.statusCode.toString();
       return false;
     }
-    //erro geral
-    return false;
   }
 }

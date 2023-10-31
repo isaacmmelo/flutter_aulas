@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/view/components/my_button.dart';
 import 'package:social_app/view/components/my_textfield.dart';
+import 'package:social_app/view/helpers/interface_helpers.dart';
 import 'package:social_app/view/helpers/rout_helpers.dart';
 
 // ignore: must_be_immutable
@@ -38,15 +39,21 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 25),
               //Input do email
               MyTextField(
-                  hintText: 'E-mail',
-                  obscureText: false,
-                  controller: controllerEmail),
+                hintText: 'E-mail',
+                obscureText: false,
+                controller: controllerEmail,
+                validator: (p0) {},
+                keyboardType: TextInputType.none,
+              ),
               const SizedBox(height: 10),
               //Input da senha
               MyTextField(
-                  hintText: 'Senha',
-                  obscureText: true,
-                  controller: controllerPass),
+                hintText: 'Senha',
+                obscureText: true,
+                controller: controllerPass,
+                validator: (p0) {},
+                keyboardType: TextInputType.none,
+              ),
               //Esqueceu a senha
               const SizedBox(height: 10),
               Row(
@@ -70,7 +77,9 @@ class LoginPage extends StatelessWidget {
               MyButton(
                 buttonText: 'Login',
                 onTapButton: () {
-                  goToHome(context);
+                  //goToHome(context);
+                  displayConfirmationMessage(
+                      'messag2e', context, () => goToHome(context));
                 },
               ),
               //Espaço em branco

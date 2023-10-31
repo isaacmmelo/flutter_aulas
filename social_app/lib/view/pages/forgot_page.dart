@@ -38,15 +38,21 @@ class ForgotPage extends StatelessWidget {
               const SizedBox(height: 25),
               //Input do email
               MyTextField(
-                  hintText: 'E-mail',
-                  obscureText: false,
-                  controller: controllerEmail),
+                hintText: 'E-mail',
+                obscureText: false,
+                controller: controllerEmail,
+                validator: (p0) {},
+                keyboardType: TextInputType.none,
+              ),
               const SizedBox(height: 10),
               //Input da senha
               MyTextField(
-                  hintText: 'CPF',
-                  obscureText: false,
-                  controller: controllerPass),
+                hintText: 'CPF',
+                obscureText: false,
+                controller: controllerPass,
+                validator: (p0) {},
+                keyboardType: TextInputType.none,
+              ),
               const SizedBox(height: 10),
               //Botão de login
               MyButton(

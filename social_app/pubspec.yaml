@@ -40,6 +40,7 @@ dependencies:
   parse_server_sdk_flutter: ^7.0.0
   progress_indicators: ^1.0.0
   google_nav_bar: ^5.0.6
+  email_validator: ^2.1.17
 
 dev_dependencies:
   flutter_test:
