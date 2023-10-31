@@ -12,6 +12,7 @@ class ProfileModel {
   AddressModel adress;
   String mainPhone;
   String secondPhone;
+  bool blank;
   ProfileModel({
     required this.objectID,
     required this.fullName,
@@ -21,6 +22,7 @@ class ProfileModel {
     required this.adress,
     required this.mainPhone,
     required this.secondPhone,
+    required this.blank,
   });
 
   ProfileModel copyWith({
@@ -32,6 +34,7 @@ class ProfileModel {
     AddressModel? adress,
     String? mainPhone,
     String? secondPhone,
+    bool? blank,
   }) {
     return ProfileModel(
       objectID: objectID ?? this.objectID,
@@ -42,6 +45,7 @@ class ProfileModel {
       adress: adress ?? this.adress,
       mainPhone: mainPhone ?? this.mainPhone,
       secondPhone: secondPhone ?? this.secondPhone,
+      blank: blank ?? this.blank,
     );
   }
 
@@ -55,6 +59,7 @@ class ProfileModel {
       'adress': adress.toMap(),
       'mainPhone': mainPhone,
       'secondPhone': secondPhone,
+      'blank': blank,
     };
   }
 
@@ -68,6 +73,7 @@ class ProfileModel {
       adress: AddressModel.fromMap(map['adress'] as Map<String, dynamic>),
       mainPhone: map['mainPhone'] as String,
       secondPhone: map['secondPhone'] as String,
+      blank: map['blank'] as bool,
     );
   }
 
@@ -78,7 +84,7 @@ class ProfileModel {
 
   @override
   String toString() {
-    return 'ProfileModel(objectID: $objectID, fullName: $fullName, image: $image, birthday: $birthday, cpf: $cpf, adress: $adress, mainPhone: $mainPhone, secondPhone: $secondPhone)';
+    return 'ProfileModel(objectID: $objectID, fullName: $fullName, image: $image, birthday: $birthday, cpf: $cpf, adress: $adress, mainPhone: $mainPhone, secondPhone: $secondPhone, blank: $blank)';
   }
 
   @override
@@ -92,7 +98,8 @@ class ProfileModel {
         other.cpf == cpf &&
         other.adress == adress &&
         other.mainPhone == mainPhone &&
-        other.secondPhone == secondPhone;
+        other.secondPhone == secondPhone &&
+        other.blank == blank;
   }
 
   @override
@@ -104,6 +111,7 @@ class ProfileModel {
         cpf.hashCode ^
         adress.hashCode ^
         mainPhone.hashCode ^
-        secondPhone.hashCode;
+        secondPhone.hashCode ^
+        blank.hashCode;
   }
 }

@@ -9,6 +9,7 @@ class AddressModel {
   String neighborhood;
   String address;
   String complement;
+  bool blank;
   AddressModel({
     required this.objectID,
     required this.country,
@@ -17,6 +18,7 @@ class AddressModel {
     required this.neighborhood,
     required this.address,
     required this.complement,
+    required this.blank,
   });
 
   AddressModel copyWith({
@@ -27,6 +29,7 @@ class AddressModel {
     String? neighborhood,
     String? address,
     String? complement,
+    bool? blank,
   }) {
     return AddressModel(
       objectID: objectID ?? this.objectID,
@@ -36,6 +39,7 @@ class AddressModel {
       neighborhood: neighborhood ?? this.neighborhood,
       address: address ?? this.address,
       complement: complement ?? this.complement,
+      blank: blank ?? this.blank,
     );
   }
 
@@ -48,6 +52,7 @@ class AddressModel {
       'neighborhood': neighborhood,
       'address': address,
       'complement': complement,
+      'blank': blank,
     };
   }
 
@@ -60,6 +65,7 @@ class AddressModel {
       neighborhood: map['neighborhood'] as String,
       address: map['address'] as String,
       complement: map['complement'] as String,
+      blank: map['blank'] as bool,
     );
   }
 
@@ -70,7 +76,7 @@ class AddressModel {
 
   @override
   String toString() {
-    return 'AddressModel(objectID: $objectID, country: $country, province: $province, city: $city, neighborhood: $neighborhood, address: $address, complement: $complement)';
+    return 'AddressModel(objectID: $objectID, country: $country, province: $province, city: $city, neighborhood: $neighborhood, address: $address, complement: $complement, blank: $blank)';
   }
 
   @override
@@ -83,7 +89,8 @@ class AddressModel {
         other.city == city &&
         other.neighborhood == neighborhood &&
         other.address == address &&
-        other.complement == complement;
+        other.complement == complement &&
+        other.blank == blank;
   }
 
   @override
@@ -94,6 +101,7 @@ class AddressModel {
         city.hashCode ^
         neighborhood.hashCode ^
         address.hashCode ^
-        complement.hashCode;
+        complement.hashCode ^
+        blank.hashCode;
   }
 }

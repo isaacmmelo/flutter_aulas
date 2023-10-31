@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/controller/controllers/user.dart';
+import 'package:social_app/controller/controllers/user_controller.dart';
 import 'package:social_app/view/components/my_button.dart';
 import 'package:social_app/view/components/my_textfield.dart';
 import 'package:social_app/view/helpers/interface_helpers.dart';
