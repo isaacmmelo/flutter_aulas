@@ -68,4 +68,43 @@ class UserController {
       return false;
     }
   }
+
+  //Função de registrar usuário
+  Future<bool> userLogin(
+    //Construtores do formulário
+    TextEditingController controllerEmail,
+    TextEditingController controllerPass,
+  ) async {
+    final email = controllerEmail.text.trim();
+    final password = controllerPass.text.trim();
+
+    final userData = ParseUser(email, password, null);
+
+    var responseUser = await userData.login();
+
+    if (responseUser.success) {
+      return true;
+    } else {
+      errorCode = responseUser.statusCode.toString();
+      return false;
+    }
+  }
+
+  Future<bool> userResetPassword(
+    //Construtores do formulário
+    TextEditingController controllerEmail,
+  ) async {
+    final email = controllerEmail.text.trim();
+
+    final userData = ParseUser(null, null, email);
+
+    var responseUser = await userData.requestPasswordReset();
+
+    if (responseUser.success) {
+      return true;
+    } else {
+      errorCode = responseUser.statusCode.toString();
+      return false;
+    }
+  }
 }

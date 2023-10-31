@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/controller/controllers/user_controller.dart';
+import 'package:social_app/view/components/app_imageAndTitle.dart';
 import 'package:social_app/view/components/my_button.dart';
 import 'package:social_app/view/components/my_textfield.dart';
 import 'package:social_app/view/helpers/interface_helpers.dart';
@@ -19,7 +20,6 @@ class _RegisterPageState extends State<RegisterPage> {
   //Variáveis da página
   UserController userController = UserController();
   bool status = false;
-  String text = 'Estamos trabalhando';
   final _formKey = GlobalKey<FormState>();
 
   //Controllers dos formulários
@@ -41,6 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
     if (status) {
       Navigator.of(context).pop;
       displayConfirmationMessage(
+        "Sucesso!",
         "Registrado com sucesso. Confirme seu e-mail e faça o login.",
         context,
         () => goToLogin(context),
@@ -48,7 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
     } else {
       Navigator.pop(context);
       String messageError = returnMessageErrorPtBr(userController.errorCode);
-      displayMessage(messageError, context);
+      displayMessage("Erro!", messageError, context);
       Navigator.of(context).pop;
     }
   }
@@ -65,25 +66,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                //Ícone do Sistema
-                ClipRRect(
-                  child: Image.asset(
-                    'lib/images/appIcon.png',
-                    height: 80,
-                  ),
-                ),
-
-                //Espaço embranco
-                const SizedBox(height: 5),
-
-                //Nome do Aplicativo
-                const Text(
-                  'D A S H  S O C I A L',
-                  style: TextStyle(fontSize: 20),
-                ),
-
-                //Espaço em branco
-                const SizedBox(height: 25),
+                const ImageAndTitle(),
 
                 //Formulário de registro
                 Form(

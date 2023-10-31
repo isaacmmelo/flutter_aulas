@@ -1,15 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/controller/controllers/user_controller.dart';
+import 'package:social_app/view/components/app_imageAndTitle.dart';
 import 'package:social_app/view/components/my_button.dart';
 import 'package:social_app/view/components/my_textfield.dart';
 import 'package:social_app/view/helpers/interface_helpers.dart';
+import 'package:social_app/view/helpers/parseErros_helpers.dart';
 import 'package:social_app/view/helpers/rout_helpers.dart';
+import 'package:social_app/view/validators/login_validator.dart';
 
 // ignore: must_be_immutable
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  //Variáveis da página
+  UserController userController = UserController();
+
+  bool status = false;
+
+  final _formKey = GlobalKey<FormState>();
+
+  //Controllers dos formulários
   TextEditingController controllerEmail = TextEditingController();
+
   TextEditingController controllerPass = TextEditingController();
+
+  void _loginUser() async {
+    loadingCircleDialog(context);
+
+    status = await userController.userLogin(controllerEmail, controllerPass);
+
+    // Confere se a resposta do awati já foi efetuada
+    if (!context.mounted) return;
+
+    if (status) {
+      Navigator.of(context).pop;
+      displayConfirmationMessage(
+        "Sucesso!",
+        "Usuário e senha confirmado, redirecionando para a Home",
+        context,
+        () => goToHome(context),
+      );
+    } else {
+      Navigator.pop(context);
+      String messageError = returnMessageErrorPtBr(userController.errorCode);
+      displayMessage(
+        "Erro!",
+        messageError,
+        context,
+      );
+      Navigator.of(context).pop;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,43 +67,55 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //Ícone do Sistema
-              ClipRRect(
-                child: Image.asset(
-                  'lib/images/appIcon.png',
-                  height: 80,
-                ),
-              ),
-              //Espaço embranco
-              const SizedBox(height: 5),
-              //Nome do Aplicativo
-              const Text(
-                'D A S H  S O C I A L',
-                style: TextStyle(fontSize: 20),
-              ),
+              const ImageAndTitle(),
+
+              //Formulário de Login
+              Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      //Input do email
+                      MyTextField(
+                        hintText: 'E-mail',
+                        obscureText: false,
+                        controller: controllerEmail,
+                        validator: (value) => validateEmail(value),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+
+                      //Espaço em branco
+                      const SizedBox(height: 10),
+
+                      //Input da senha
+                      MyTextField(
+                        hintText: 'Senha',
+                        obscureText: true,
+                        controller: controllerPass,
+                        validator: (value) => validatePassword(value),
+                        keyboardType: TextInputType.visiblePassword,
+                      ),
+
+                      //Espaço em branco
+                      const SizedBox(height: 20),
+
+                      //Botão de login
+                      MyButton(
+                        buttonText: 'Entrar',
+                        onTapButton: () {
+                          if (_formKey.currentState!.validate()) {
+                            _loginUser();
+                          }
+                        },
+                      ),
+                    ],
+                  )),
+
               //Espaço em branco
-              const SizedBox(height: 25),
-              //Input do email
-              MyTextField(
-                hintText: 'E-mail',
-                obscureText: false,
-                controller: controllerEmail,
-                validator: (p0) {},
-                keyboardType: TextInputType.none,
-              ),
-              const SizedBox(height: 10),
-              //Input da senha
-              MyTextField(
-                hintText: 'Senha',
-                obscureText: true,
-                controller: controllerPass,
-                validator: (p0) {},
-                keyboardType: TextInputType.none,
-              ),
+              const SizedBox(height: 20),
+
               //Esqueceu a senha
-              const SizedBox(height: 10),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
                     onTap: () {
@@ -71,17 +129,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              //Espaço em branco
-              const SizedBox(height: 20),
-              //Botão de login
-              MyButton(
-                buttonText: 'Login',
-                onTapButton: () {
-                  //goToHome(context);
-                  displayConfirmationMessage(
-                      'messag2e', context, () => goToHome(context));
-                },
-              ),
+
               //Espaço em branco
               const SizedBox(height: 20),
               //Não possui conta, registre-se
