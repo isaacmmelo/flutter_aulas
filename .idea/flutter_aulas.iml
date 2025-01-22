@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/app_navigation_react/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/app_navigation_react/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/app_navigation_react/build" />
+      <excludeFolder url="file://$MODULE_DIR$/app_navigation_static/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/app_navigation_static/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/app_navigation_static/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ecommerce_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ecommerce_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ecommerce_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/exemplo_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/exemplo_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/exemplo_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/social_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/social_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/social_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/todo_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/todo_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/todo_app/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
