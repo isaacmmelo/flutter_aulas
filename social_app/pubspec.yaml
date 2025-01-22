@@ -12,11 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  parse_server_sdk_flutter: ^7.0.0
+  parse_server_sdk_flutter: ^9.0.0
   progress_indicators: ^1.0.0
   google_nav_bar: ^5.0.6
-  email_validator: ^2.1.17
-  flutter_launcher_icons: ^0.13.1
+  email_validator: ^3.0.0
+  flutter_launcher_icons: ^0.14.3
 
 flutter_launcher_icons:
   image_path: "lib/images/appIcon.png"
@@ -32,7 +32,7 @@ flutter_launcher_icons:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^5.0.0
   
 flutter:
 

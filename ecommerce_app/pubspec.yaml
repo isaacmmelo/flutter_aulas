@@ -15,7 +15,7 @@ dependencies:
   #Provider para autalização automática de dados
   provider: 
   #Biblioteca para funcionar com Back4App
-  parse_server_sdk_flutter: ^6.0.0
+  parse_server_sdk_flutter: ^9.0.0
   #Gerenciador de estados
   get: ^4.6.6
   http: ^0.13.6
@@ -24,12 +24,12 @@ dependencies:
   image_picker_for_web: ^3.0.1
   #Outros
   validatorless: ^1.2.3
-  intl: ^0.18.1
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
