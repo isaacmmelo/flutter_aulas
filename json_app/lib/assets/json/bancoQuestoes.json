@@ -1,0 +1,129 @@
+{
+   "perguntas":[
+      {
+         "id":100,
+         "peso":5,
+         "tipo":"ME",
+         "enunciado":"Qual comando insere dados?",
+         "alternativas":[
+            "Select",
+            "Update",
+            "Delete",
+            "Insert"
+         ],
+         "resposta":3
+      },
+      {
+         "id":101,
+         "peso":5,
+         "tipo":"ME",
+         "enunciado":"Chave estrangeira cria?",
+         "alternativas":[
+            "Tabela",
+            "Índice",
+            "Vinculo",
+            "Campo"
+         ],
+         "resposta":2
+      },
+      {
+         "id":102,
+         "peso":5,
+         "tipo":"ME",
+         "enunciado":"Normalização tem a função de: ?",
+         "alternativas":[
+            "Redundância",
+            "Velocidade",
+            "Complexidade",
+            "Tamanho"
+         ],
+         "resposta":0
+      },
+      {
+         "id":201,
+         "peso":2,
+         "tipo":"VF",
+         "enunciado":"Uma classe pode herdar atributos e métodos de apenas uma outra classe.",
+         "alternativas":[
+            "Falso",
+            "Verdadeiro"
+         ],
+         "resposta":0
+      },
+      {
+         "id":301,
+         "peso":2,
+         "tipo":"VF",
+         "enunciado":"Objetos são instâncias de classes.",
+         "alternativas":[
+            "Falso",
+            "Verdadeiro"
+         ],
+         "resposta":1
+      },
+      {
+         "id":501,
+         "peso":10,
+         "tipo":"REL",
+         "enunciado":"SCRUM 1: Ligue o termo da linha superior com o conceito mais adequado da linha inferior da direita.",
+         "alternativas":[
+            [
+               "Sprint",
+               "Product Backlog",
+               "Daily Scrum"
+            ],
+            [
+               "Reunião diária para sincronização da equipe",
+               "Período de tempo para desenvolvimento",
+               "Lista priorizada de itens a serem desenvolvidos"
+            ]
+         ],
+         "resposta":[
+            [
+               0,
+               1
+            ],
+            [
+               1,
+               3
+            ],
+            [
+               2,
+               2
+            ]
+         ]
+      },
+      {
+         "id":502,
+         "peso":10,
+         "tipo":"REL",
+         "enunciado":"SCRUM 2: Ligue o termo da linha superior com o conceito mais adequado da linha inferior da direita.",
+         "alternativas":[
+            [
+               "Scrum Master",
+               "Product Owner",
+               "Equipe de Desenvolvimento"
+            ],
+            [
+               "Facilitador do processo Scrum e servidor da equipe",
+               "Responsável pela visão do produto e pela priorização do backlog",
+               "Responsável pela criação do produto"
+            ]
+         ],
+         "resposta":[
+            [
+               0,
+               0
+            ],
+            [
+               1,
+               1
+            ],
+            [
+               2,
+               2
+            ]
+         ]
+      }
+   ]
+}
